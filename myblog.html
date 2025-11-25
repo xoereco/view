@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术博客 | 探索编程的无限可能</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // Tailwind 配置
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F3F4F6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            .blog-card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-code text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-dark">TechBlog</span>
+            </div>
+            
+            <!-- 桌面端导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="font-medium text-primary">首页</a>
+                <a href="#" class="font-medium text-gray-600 hover:text-primary transition-colors">分类</a>
+                <a href="#" class="font-medium text-gray-600 hover:text-primary transition-colors">标签</a>
+                <a href="#" class="font-medium text-gray-600 hover:text-primary transition-colors">关于</a>
+            </div>
+            
+            <!-- 搜索和移动端菜单按钮 -->
+            <div class="flex items-center space-x-4">
+                <button class="text-gray-600 hover:text-primary transition-colors">
+                    <i class="fa fa-search text-lg"></i>
+                </button>
+                <button class="md:hidden text-gray-600 hover:text-primary transition-colors">
+                    <i class="fa fa-bars text-lg"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <!-- 博客列表 -->
+        <section class="lg:col-span-8">
+            <!-- 特色文章 -->
+            <article class="mb-12 bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="https://picsum.photos/800/500?random=1" alt="特色文章封面" class="h-full w-full object-cover">
+                    </div>
+                    <div class="p-6 md:w-1/2 flex flex-col justify-center">
+                        <span class="text-sm font-medium text-primary">前端技术</span>
+                        <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-4 text-balance">
+                            <a href="#" class="hover:text-primary transition-colors">深入理解Tailwind CSS：现代CSS框架的革命</a>
+                        </h2>
+                        <p class="text-gray-600 mb-6">探索Tailwind CSS如何改变我们编写CSS的方式，以及它为什么成为现代Web开发的首选工具...</p>
+                        <div class="flex justify-between items-center mt-auto">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=100" alt="作者头像" class="w-10 h-10 rounded-full">
+                                <div class="ml-3">
+                                    <p class="font-medium">张小明</p>
+                                    <p class="text-sm text-gray-500">2024年3月15日</p>
+                                </div>
+                            </div>
+                            <div class="flex space-x-4 text-gray-500">
+                                <span><i class="fa fa-eye mr-1"></i> 2.5k</span>
+                                <span><i class="fa fa-comment mr-1"></i> 42</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 博客文章列表 -->
+            <div class="space-y-8">
+                <!-- 文章1 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-sm blog-card-hover">
+                    <img src="https://picsum.photos/800/400?random=2" alt="文章封面" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm font-medium text-secondary">后端开发</span>
+                        <h2 class="text-xl font-bold mt-2 mb-3">
+                            <a href="#" class="hover:text-primary transition-colors">Spring Boot 3.0新特性详解与实践</a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">Spring Boot 3.0带来了许多令人兴奋的新特性，包括对Jakarta EE 9的支持、原生镜像支持以及改进的性能...</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=101" alt="作者头像" class="w-8 h-8 rounded-full">
+                                <span class="ml-2 text-sm font-medium">李开发</span>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                <span>2024年2月28日</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 文章2 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-sm blog-card-hover">
+                    <img src="https://picsum.photos/800/400?random=3" alt="文章封面" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm font-medium text-primary">前端技术</span>
+                        <h2 class="text-xl font-bold mt-2 mb-3">
+                            <a href="#" class="hover:text-primary transition-colors">Vue 3组合式API最佳实践指南</a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">Vue 3的组合式API为我们提供了更灵活的代码组织方式，本文将分享一些在实际项目中使用组合式API的最佳实践...</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=102" alt="作者头像" class="w-8 h-8 rounded-full">
+                                <span class="ml-2 text-sm font-medium">王前端</span>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                <span>2024年2月20日</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 文章3 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-sm blog-card-hover">
+                    <img src="https://picsum.photos/800/400?random=4" alt="文章封面" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm font-medium text-secondary">DevOps</span>
+                        <h2 class="text-xl font-bold mt-2 mb-3">
+                            <a href="#" class="hover:text-primary transition-colors">Docker容器化部署最佳实践</a>
+                        </h2>
+                        <p class="text-gray-600 mb-4">Docker已经成为现代应用部署的标准工具，本文将探讨如何优化Docker镜像、实现高效的容器化部署流程...</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=103" alt="作者头像" class="w-8 h-8 rounded-full">
+                                <span class="ml-2 text-sm font-medium">赵运维</span>
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                <span>2024年2月10日</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- 分页 -->
+            <div class="mt-12 flex justify-center">
+                <nav class="inline-flex rounded-md shadow-sm" aria-label="分页">
+                    <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                        <span class="sr-only">上一页
